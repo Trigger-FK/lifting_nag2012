@@ -1,7 +1,7 @@
 # lifting_nag2012
 This repository include the simulation code of optimal regulator via lifting technique.
 
-_reference_
+_reference_  
 永原, “離散時間制御”, システム／制御／情報, 56 (6), 2012
 
 ## Description
