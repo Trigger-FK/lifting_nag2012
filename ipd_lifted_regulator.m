@@ -44,11 +44,12 @@ sim('ipd_lifting_sim.slx')
 % Create figure
 % L1 norm of state
 figure;
-plot(ans.tout,ans.continuous, 'k', 'LineWidth', 1.5); hold on;
-plot(ans.tout,ans.lifting, 'r--', 'LineWidth', 1.5);
-plot(ans.tout,ans.nonlifting, 'b:', 'LineWidth', 1.5);
+plot(ans.tout,ans.continuous, 'k', 'LineWidth', 2.0); hold on;
+plot(ans.tout,ans.lifting, 'r-.', 'LineWidth', 2.0);
+plot(ans.tout,ans.nonlifting, 'b:', 'LineWidth', 2.0);
 xlabel('time [s]')
-ylabel('|x(t)|')
+ylabel('$|x(t)|$','Interpreter','latex')
+title('L1 norms of state')
 ylim([-0.1, 3.0])
 legend('Ideal response','Sampled-data design','Discretization of Kc')
 grid on;
@@ -56,11 +57,12 @@ hold off;
 
 % State trajectory
 figure;
-plot(ans.tout,ans.x_continuous, 'k', 'LineWidth', 1.5); hold on;
-plot(ans.tout,ans.x_lifting, 'r--', 'LineWidth', 1.5);
-plot(ans.tout,ans.x_nonlifting, 'b:', 'LineWidth', 1.5);
+plot(ans.tout,ans.x_continuous, 'k', 'LineWidth', 2.0); hold on;
+plot(ans.tout,ans.x_lifting, 'r-.', 'LineWidth', 2.0);
+plot(ans.tout,ans.x_nonlifting, 'b:', 'LineWidth', 2.0);
 xlabel('time [s]')
-ylabel('position')
+ylabel('$x(t)$','Interpreter','latex')
+title('the trajectories of position')
 ylim([-0.1, 1.6])
 legend('Ideal response','Sampled-data design','Discretization of Kc')
 grid on;
@@ -68,12 +70,13 @@ hold off;
 
 % Control input
 figure;
-plot(ans.tout,ans.u_continuous, 'k', 'LineWidth', 1.5); hold on;
-plot(ans.tout,ans.u_lifting, 'r--', 'LineWidth', 1.5);
-plot(ans.tout,ans.u_nonlifting, 'b:', 'LineWidth', 1.5);
+plot(ans.tout,ans.u_continuous, 'k', 'LineWidth', 2.0); hold on;
+plot(ans.tout,ans.u_lifting, 'r-.', 'LineWidth', 2.0);
+plot(ans.tout,ans.u_nonlifting, 'b:', 'LineWidth', 2.0);
 xlabel('time [s]')
-ylabel('input')
+ylabel('$u(t)$','Interpreter','latex')
+title('the trajectories of input')
 ylim([-2.6 0.1])
-legend('Ideal response','Sampled-data design','Discretization of Kc')
+legend({'Ideal response','Sampled-data design','Discretization of Kc'},'Location', 'southeast')
 grid on;
 hold off;
